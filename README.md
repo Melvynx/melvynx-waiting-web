@@ -2,7 +2,7 @@
 
 Maitenance or waiting page for my website https://melvynx.com !
 
-## Language
+## Language
 
 App was made in Svelte, inspired by the [tutorial of Svelte](https://svelte.dev/tutorial/basics).
 
