@@ -1,30 +1,33 @@
 <script>
-	export let name;
+  import MelvynxLogo from './animation/MelvynxLogoAnim.svelte';
+
+  import WrittingEffect from './animation/WrittingEffect.svelte';
+  import Contact from './contact/Contact.svelte';
+  import CentredContainer from './display/CentredContainer.svelte';
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<main class="app">
+  <CentredContainer>
+    <div class="logo-container">
+      <MelvynxLogo />
+    </div>
+    <WrittingEffect
+      text={"If you see this page 👁 it means I haven't finished my site yet.\nBut something heavy 🔥 is coming."}
+    />
+    <Contact />
+  </CentredContainer>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap');
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  .app {
+    --bg-color: #1d1d1d;
+    --base: 8;
+    --text-color: #f0f0f0;
+    background-color: var(--bg-color);
+  }
+  .logo-container {
+    margin: 16px;
+  }
 </style>
