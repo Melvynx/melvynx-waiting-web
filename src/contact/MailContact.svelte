@@ -13,7 +13,6 @@
 
 <style>
   div {
-    /* min-height: 74px; */
     display: flex;
     flex-direction: column;
     margin: 16px;

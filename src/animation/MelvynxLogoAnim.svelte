@@ -22,7 +22,7 @@
 </script>
 
 <div class="melvynx-logo-root">
-  <div class="egg">
+  <div class="xztiu">
     <img src="images/hello.gif" alt="hello everyone" />
   </div>
   <div
@@ -36,8 +36,7 @@
       translate({$coords.x}px, {$coords.y}px)
       rotate({$coords.x *
       $coords.y *
-      0.001}deg)
-  "
+      0.001}deg)"
   >
     <MelvynxLogoSvg />
   </div>
@@ -59,11 +58,11 @@
     cursor: move;
   }
 
-  .egg {
+  .xztiu {
     position: absolute;
     width: var(--width);
   }
-  .egg > img {
+  .xztiu > img {
     width: var(--width);
   }
 </style>
