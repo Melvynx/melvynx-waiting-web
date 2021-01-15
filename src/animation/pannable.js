@@ -3,7 +3,6 @@ export function pannable(node) {
   let y;
 
   function handleMouseUp() {
-    console.log('mouseup');
     x = event.clientX;
     y = event.clientY;
 
