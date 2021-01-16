@@ -3,6 +3,9 @@
 
   export let displayAnimation = true;
 
+  const speed = 10;
+  const mouseRadiusDividend = 100;
+
   let canvas;
   let ctx;
   let particules;
@@ -17,9 +20,6 @@
   } else {
     isAnimationRunning = false;
   }
-
-  const speed = 10;
-  const mouseRadiusDividend = 100;
 
   let mouse = {
     x: null,
@@ -72,7 +72,7 @@
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-      ctx.fillStyle = '#2c3e50';
+      ctx.fillStyle = '#485460';
       ctx.fill();
     }
     // update place of particules

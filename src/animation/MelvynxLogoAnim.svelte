@@ -2,6 +2,7 @@
   import { spring } from 'svelte/motion';
   import MelvynxLogoSvg from './MelvynxLogoSvg.svelte';
   import { pannable } from './pannable';
+  import { fade } from 'svelte/transition';
 
   let coords = spring({ x: 0, y: 0 }, { stiffness: 0.4, damping: 0.2 });
   let isPanMove = false;
@@ -26,7 +27,7 @@
 
 <div class="melvynx-logo-root">
   {#if isPanMove}
-    <div class="xztiu">
+    <div class="xztiu" transition:fade={{ duration: 150 }}>
       <img src="images/hello.gif" alt="hello everyone" />
     </div>
   {/if}
