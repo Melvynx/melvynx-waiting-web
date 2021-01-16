@@ -4,9 +4,11 @@
   import { pannable } from './pannable';
 
   let coords = spring({ x: 0, y: 0 }, { stiffness: 0.4, damping: 0.2 });
+  let isPanMove = false;
 
   function handlePanStart() {
     coords.stiffness = coords.damping = 0.3;
+    isPanMove = true;
   }
 
   function handlePanMove(event) {
@@ -18,13 +20,16 @@
 
   function handlePanEnd() {
     coords.set({ x: 0, y: 0 });
+    isPanMove = false;
   }
 </script>
 
 <div class="melvynx-logo-root">
-  <div class="xztiu">
-    <img src="images/hello.gif" alt="hello everyone" />
-  </div>
+  {#if isPanMove}
+    <div class="xztiu">
+      <img src="images/hello.gif" alt="hello everyone" />
+    </div>
+  {/if}
   <div
     class="melvynx-logo-box"
     use:pannable
@@ -32,6 +37,9 @@
     on:panmove={handlePanMove}
     on:panend={handlePanEnd}
     style="
+    background-color: {isPanMove
+      ? 'var(--bg-color)'
+      : 'transparent'};
     transform:
       translate({$coords.x}px, {$coords.y}px)
       rotate({$coords.x *
@@ -52,7 +60,6 @@
     position: relative;
     left: calc(50% - var(--width) / 2);
     top: calc(50% - var(--height) / 2);
-    background-color: var(--bg-color);
     width: var(--width);
     height: var(--height);
     cursor: move;

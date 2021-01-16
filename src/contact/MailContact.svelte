@@ -1,11 +1,13 @@
 <script>
+  import { melvynxemail } from '../melvynx-data';
+
   let value;
 </script>
 
 <div>
   <input bind:value placeholder="Mail Subject" />
   {#if value}
-    <a class="send-mail-btn" href="mailto:melvynmal@gmai.com?subject={value}">
+    <a class="send-mail-btn" href="mailto:{melvynxemail}?subject={value}">
       <span>Send mail</span>
     </a>
   {/if}

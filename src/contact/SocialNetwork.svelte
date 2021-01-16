@@ -1,5 +1,9 @@
+<script>
+  import { githublink } from '../melvynx-data';
+</script>
+
 <div>
-  <a href="https://github.com/melvynx" title="my github page">
+  <a href={githublink} title="my github page">
     <img class="github" src="images/github-logo.png" alt="github logo" />
   </a>
 </div>

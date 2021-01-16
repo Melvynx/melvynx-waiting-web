@@ -1,21 +1,19 @@
 <script>
   import MelvynxLogo from './animation/MelvynxLogoAnim.svelte';
-
   import WrittingEffect from './animation/WrittingEffect.svelte';
   import Contact from './contact/Contact.svelte';
-  import CentredContainer from './display/CentredContainer.svelte';
+  import BackgroundApp from './display/BackgroundApp.svelte';
+  import { mainText } from './melvynx-data';
 </script>
 
 <main class="app">
-  <CentredContainer>
+  <BackgroundApp>
     <div class="logo-container">
       <MelvynxLogo />
     </div>
-    <WrittingEffect
-      text={"If you see this page 👁 it means I haven't finished my site yet.\nBut something heavy 🔥 is coming."}
-    />
+    <WrittingEffect text={mainText} />
     <Contact />
-  </CentredContainer>
+  </BackgroundApp>
 </main>
 
 <style>
@@ -23,7 +21,6 @@
 
   .app {
     --bg-color: #1d1d1d;
-    --base: 8;
     --text-color: #f0f0f0;
     background-color: var(--bg-color);
   }
